@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="span2">
+  		<%= image_tag (@book.image) %>
+	</div>
+	<div class="span8">
+		<bold><%= @book.title %></bold>, by <%= link_to @book.author, "#" %>, illustrated by <%= @book.illustrator %>, publisher <%= @book.publisher %> 
+		<p>
+			<%= @book.revue %>
+		</p><%= @book.age %><%= @book.subject %>
+
+ <%= @book.amazon %>
+</div> 
+<div class="span1">
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+</div>
