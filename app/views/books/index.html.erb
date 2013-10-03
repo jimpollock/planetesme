@@ -12,23 +12,23 @@
 				</div>
 			</td>
 			<td>
-			<div class="span8">
-				<h4><%= link_to book.title, "http://www.amazon.com/exec/obidos/ASIN/#{book.amazon}/planetesme" %></h4> by <%= link_to book.author, "#" %>, illustrated by <%= book.illustrator %>, publisher <%= book.publisher %> <%= book.revue %>
+			<div class="span9">
+				<h4><%= link_to book.title, "http://www.amazon.com/exec/obidos/ASIN/#{book.amazon}/planetesme" %></h4> by <%= link_to book.author, "books?search=#{book.author}" %>, illustrated by <%= link_to book.illustrator, "books?search=#{book.illustrator}" %>, published by <%= link_to book.publisher, "books?search=#{book.publisher}" %> <%= book.revue %>
 				<%= book.age %><%= book.subject %>
 			</div>
 			</td>
 		
+			<% if user_signed_in? %>
 			<td>
-				<div class="span1">
-					<%= link_to 'Show', book %>
-					<%= link_to 'Edit', edit_book_path(book) %>
-					<%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?'} %>
-				</div>
+					<div class="span1">
+						<%= link_to 'Show', book %>
+						<%= link_to 'Edit', edit_book_path(book) %>
+						<%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?'} %>
+					</div>
 			</td>
+		<% else %>
+		<% end %>
 		</tr> 
 		<% end %>
 	</tbody>
 </table>
-
-
-<%= link_to 'New Book', new_book_path %>
