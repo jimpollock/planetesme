@@ -1,4 +1,4 @@
-<%= form_for(@book) do |f| %>
+<%= simple_form_for(@book, :html => {:class => 'form-horizontal' }) do |f| %>
   <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
@@ -11,43 +11,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :illustrator %><br />
-    <%= f.text_field :illustrator %>
-  </div>
-  <div class="field">
-    <%= f.label :publisher %><br />
-    <%= f.text_field :publisher %>
-  </div>
-  <div class="field">
-    <%= f.label :revue %><br />
-    <%= f.text_area :revue %>
-  </div>
-  <div class="field">
-    <%= f.label :amazon %><br />
-    <%= f.text_field :amazon %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
-  </div>
-  <div class="actions">
+  
+    <%= f.input :title %>
+
+    <%= f.input :image %>
+
+    <%= f.input :author %>
+    
+    <%= f.input :illustrator %>
+    
+	<%= f.input :publisher %>
+    
+    <%= f.input :revue %>
+
+    <%= f.input :amazon %>
+
+    <%= f.input :age %><br />
+    
+    <%= f.input :subject %><br />
+    
+  <div class="form-actions">
     <%= f.submit %>
   </div>
 <% end %>

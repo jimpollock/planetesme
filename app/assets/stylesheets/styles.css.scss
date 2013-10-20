@@ -11,6 +11,15 @@ body{
     border: 0;
 }
 
+
+.table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
+    background-color: #34bb9a;
+}
+
+.table-striped tbody > tr:nth-child(even) > td, .table-striped tbody > tr:nth-child(even) > th {
+    background-color: #ccaa12;
+}
+
 .footer{
     margin-top: 50px;
     color: $grayLight;
